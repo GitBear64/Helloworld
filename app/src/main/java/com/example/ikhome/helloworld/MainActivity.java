@@ -1,6 +1,7 @@
 package com.example.ikhome.helloworld;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -8,45 +9,33 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
+    public final static String TAG="Laskin";
+
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
-        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        /*fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+    public void summaLasku(View view){
+        Log.d(TAG, "Laske-nappia painettiin");
+        EditText editTextNumero1 =(EditText)findViewById(R.id.numero1);
+        EditText editTextNumero2 =(EditText)findViewById(R.id.numero2);
+        EditText editTextTulos =(EditText)findViewById(R.id.Tulos);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        String arvo1=editTextNumero1.getText().toString();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        int luku1=Integer.parseInt(arvo1);
 
-        return super.onOptionsItemSelected(item);
+        Log.d(TAG, "numero1="+luku1);
+
+        editTextTulos.setText(""+luku1);
+
     }
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Helloworld</string>
+    <string name="app_name">Laskin</string>
     <string name="edit_message">Enter a message</string>
-    <string name="button_send">Send</string>
+    <string name="button_send">Laske</string>
 </resources>
